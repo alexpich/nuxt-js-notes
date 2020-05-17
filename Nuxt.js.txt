@@ -156,3 +156,42 @@ Styling Nuxt Apps
 	Declare it in config
 		nuxt.config.js
 			css: ["~/assets/styles/main.css"],
+			
+			
+			
+			
+--------------------
+Nuxt.js Blog App
+			
+			
+	Create the project (create-nuxt-app nuxt-blog)
+
+	Create pages/about, pages/admin, pages/posts
+	
+	Create about/index.vue
+	
+	Create posts/index.vue			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			W
