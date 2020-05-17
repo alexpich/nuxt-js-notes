@@ -63,3 +63,96 @@ Adding Links and Navigating Around
 		  }
 		};
 		</script>
+		
+		
+Adding a default error page
+	-create layouts/error.vue
+	-declaring the file is enough, write your error message there in a template
+	
+Working With Normal Components
+	First, create your header component, then put it in one of your layouts such as default.vue or users.vue
+
+	Using a header
+		components/Header.vue
+		
+			<template>
+			  <header class="header">
+				<ul class="nav-items">
+				  <li>
+					<nuxt-link to="/">Home</nuxt-link>
+				  </li>
+				  <li>
+					<nuxt-link to="/users">Users</nuxt-link>
+				  </li>
+				</ul>
+			  </header>
+			</template>
+
+			<style scoped>
+			.header {
+			  width: 100%;
+			  height: 60px;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  background: #c0c0c0;
+			}
+			.nav-items {
+			  list-style: none;
+			  padding: 0;
+			  margin: 0;
+			  display: flex;
+			  justify-content: space-around;
+			  align-items: center;
+			  width: 80%;
+			}
+			</style>
+		
+		layouts/default.vue
+			<template>
+			  <div>
+				<Header />
+				<nuxt />
+			  </div>
+			</template>
+
+			<style>
+			</style>
+
+			<script>
+			import Header from "@/components/Header.vue";
+			export default {
+			  components: {
+				Header: Header
+			  }
+			};
+			</script>
+			
+		layouts/users.vue
+			<template>
+			  <div>
+				<Header />
+				<header>USERS SECTION</header>
+				<nuxt />
+			  </div>
+			</template>
+
+			<style>
+			</style>
+
+			<script>
+			import Header from "@/components/Header.vue";
+			export default {
+			  components: {
+				Header: Header
+			  }
+			};
+			</script>
+			
+Styling Nuxt Apps
+	Create your stylesheet
+		assets/styles.main.css
+	
+	Declare it in config
+		nuxt.config.js
+			css: ["~/assets/styles/main.css"],
