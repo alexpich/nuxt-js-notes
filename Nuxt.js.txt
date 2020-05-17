@@ -1,0 +1,65 @@
+Nuxt.js
+
+Requirements
+1) Node.js
+2) npm install -g create-nuxt-app
+
+Creating A Project And Running It
+1) create-nuxt-app project-name (use cmd and not gitbash)
+2) Follow directions in terminal
+3) cd project-name
+4) yarn run dev
+	(http://localhost:3000/)
+	
+Types
+	Universal App
+	-First view is rendered dynamically on the server
+	-After first load, app turns into SPA
+	*Great for SEO!
+
+	SPA
+	-App starts after first Load
+	-App stays SPA
+	*Like a normal Vue App but simplified development
+
+	Static App
+	-Pre-rendered Views are Loaded
+	-After first load, app turns into SPA
+	*Great for SEO!
+	
+Folder Structure for Routes
+
+	pages
+		index.vue
+		users/index.vue
+		users/_id.vue 
+			-(dynamic, allows you to go to users/1)
+			- using {{route.params.id}}
+			
+			
+Adding Links and Navigating Around
+
+	pages/users/index.vue
+	-v-model the input so that we can type and save the id
+	-button click will trigger the method to use the router push to the desired page
+		<template>
+		  <div>
+			<input type="text" v-model="userId" />
+			<button @click="onLoadUser">Load User</button>
+		  </div>
+		</template>
+
+		<script>
+		export default {
+		  data() {
+			return {
+			  userId: ""
+			};
+		  },
+		  methods: {
+			onLoadUser() {
+			  this.$router.push("/users/" + this.userId);
+			}
+		  }
+		};
+		</script>
